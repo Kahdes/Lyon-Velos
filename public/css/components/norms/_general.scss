@@ -1,0 +1,41 @@
+:root {
+	// * Colors
+	//========================
+
+	// * Fonts
+	//========================
+	--font-family: "Roboto", "Arial", sans-serif;
+	--font-light: 400;
+	--font-normal: 700;
+	--font-bold: 900;
+
+	// * Animations
+	//========================
+	--transition-time: .3s;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+	--body-min-width: 310px;
+
+	min-width: var(--body-min-width);
+	margin: 0;
+	font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {	margin: 0; }
