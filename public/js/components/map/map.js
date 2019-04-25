@@ -1,4 +1,6 @@
-export default class Mapbox {
+import config from './config.js';
+
+class Mapbox {
 	constructor(props) {
 		this.element = props.map.element;
 		this.token = props.map.token;
@@ -7,8 +9,8 @@ export default class Mapbox {
 
 		this.api = props.api.url + props.api.key;
 
-		this.initialize = this.initialize.bind(this);
-		this.tileLayer = this.tileLayer.bind(this);
+		this.initialize   = this.initialize.bind(this);
+		this.tileLayer 	  = this.tileLayer.bind(this);
 		this.createMarker = this.createMarker.bind(this);
 	}
 
@@ -66,7 +68,22 @@ export default class Mapbox {
 				.bindPopup(text);
 			marker.on('click', (e) => {
 				map.setView(e.latlng, 17);
+				//this.informationPanel(station);
 			});
 		}
 	}
+
+	/*
+	informationPanel(station) {
+		let p = document.createElement('p');
+		p.innerText = station.name;
+		let infoPanel = document.getElementById('information-panel');
+		infoPanel.appendChild(p);
+		$('#information-panel').innerHTML = station;
+	}
+	*/
 }
+
+const map = new Mapbox(config);
+
+export default map;
